@@ -34,7 +34,9 @@ jobs:
           ${{ runner.os }}-yarn-
 
     - name: run yarn 
-      run: cd hero-app && yarn && yarn build # 进入项目目录 && 安装依赖 && 构建项目
+      run: cd hero-app  # 进入项目目录
+      run: yarn # 安装依赖
+      run: yarn build --prod --base-href /ng-apps/hero-app/ # 构建项目
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
