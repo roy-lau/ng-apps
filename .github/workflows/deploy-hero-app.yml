@@ -32,11 +32,13 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
-    - run: cd hero-app && yarn && yarn build # 进入项目目录 && 安装依赖 && 构建项目
+
+    - name: run yarn 
+      run: cd hero-app && yarn && yarn build # 进入项目目录 && 安装依赖 && 构建项目
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.personal_token }}
-        publish_dir: ./dist # 发布目录
+        publish_dir: ./hero-app/dist # 发布目录
         publish_branch: gh-pages # 发布分支
