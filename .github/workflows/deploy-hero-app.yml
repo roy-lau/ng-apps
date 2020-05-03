@@ -35,10 +35,10 @@ jobs:
 
     # 进入项目目录 && 安装依赖 && 构建项目
     - name: cd yarn install, build 
-        run: |
-          cd hero-app
-          yarn
-          yarn build --prod --base-href /ng-apps/hero-app/
+      run: |
+        cd hero-app
+        yarn
+        yarn build --prod --base-href /ng-apps/hero-app/
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
