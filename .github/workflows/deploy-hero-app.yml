@@ -33,11 +33,11 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
 
-    - name: cd yarn install, build
+    - name: cd yarn install, build # 进入项目目录 && 安装依赖 && 构建项目
         run: |
-          cd hero-app  # 进入项目目录
-          yarn         # 安装依赖
-          yarn build --prod --base-href /ng-apps/hero-app/ # 构建项目
+          cd hero-app
+          yarn
+          yarn build --prod --base-href /ng-apps/hero-app/
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
