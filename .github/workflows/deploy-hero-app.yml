@@ -33,7 +33,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
 
-    - name: cd yarn install, build # 进入项目目录 && 安装依赖 && 构建项目
+    # 进入项目目录 && 安装依赖 && 构建项目
+    - name: cd yarn install, build 
         run: |
           cd hero-app
           yarn
